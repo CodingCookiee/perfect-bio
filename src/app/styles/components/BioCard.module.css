@@ -1,0 +1,130 @@
+.bioCard {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.bioCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.bioCardHeader {
+  padding: 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bioCardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgb(var(--foreground-rgb));
+}
+
+.bioCardPlatform {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+}
+
+.bioCardContent {
+  padding: 1.25rem;
+  color: rgb(var(--foreground-rgb));
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.bioCardFooter {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bioCardDate {
+  font-size: 0.75rem;
+  color: rgba(var(--foreground-rgb), 0.6);
+}
+
+.bioCardActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.bioCardButton {
+  background: none;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.bioCardButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.bioCardEditButton {
+  color: rgb(var(--primary-rgb));
+}
+
+.bioCardDeleteButton {
+  color: rgb(var(--error-rgb));
+}
+
+.bioCardCopyButton {
+  color: rgb(var(--secondary-rgb));
+}
+
+/* Platform-specific styles */
+.platformLinkedIn {
+  background-color: rgba(10, 102, 194, 0.1);
+  color: rgb(10, 102, 194);
+}
+
+.platformTwitter {
+  background-color: rgba(29, 161, 242, 0.1);
+  color: rgb(29, 161, 242);
+}
+
+.platformInstagram {
+  background-color: rgba(225, 48, 108, 0.1);
+  color: rgb(225, 48, 108);
+}
+
+.platformGitHub {
+  background-color: rgba(36, 41, 46, 0.1);
+  color: rgb(36, 41, 46);
+}
+
+.platformWebsite {
+  background-color: rgba(var(--accent-rgb), 0.1);
+  color: rgb(var(--accent-rgb));
+}
+
+/* Dark mode styles */
+:global(.dark) .bioCard {
+  background-color: rgb(31, 41, 55);
+}
+
+:global(.dark) .bioCardHeader,
+:global(.dark) .bioCardFooter {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+:global(.dark) .bioCardButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+:global(.dark) .platformGitHub {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255);
+}
