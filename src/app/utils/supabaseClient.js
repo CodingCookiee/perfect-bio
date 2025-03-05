@@ -13,8 +13,8 @@ if (!supabaseUrl || !supabaseAnonKey) {
 
 // Create a single supabase client for interacting with your database
 const supabase = createClient(
-  supabaseUrl || 'https://placeholder-url.supabase.co',
-  supabaseAnonKey || 'placeholder-key'
+  supabaseUrl ,
+  supabaseAnonKey 
 );
 
 export default supabase;
