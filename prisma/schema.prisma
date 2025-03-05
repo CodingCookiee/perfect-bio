@@ -1,0 +1,109 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// Enums
+enum Role {
+  USER
+  ADMIN
+}
+
+enum PlatformType {
+  LinkedIn
+  Twitter
+  Instagram
+  Facebook
+  GitHub
+  Personal
+  Medium
+  Speaker
+  Email
+  Company
+  Other
+}
+
+enum ToneType {
+  professional
+  casual
+  creative
+  technical
+  formal
+  informal
+}
+
+enum LengthType {
+  short
+  medium
+  long
+}
+
+// Models  
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  name          String?
+  profile       String?
+  role          Role      @default(USER)
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+  bios          Bio[]
+  subscription  Subscription?
+
+  @@map("users")
+}
+
+model Bio {
+  id           String      @id @default(uuid())
+  title        String?
+  platform     PlatformType
+  tone         ToneType
+  length       LengthType
+  content      String      @db.Text
+  
+  // Bio metadata
+  name         String
+  profession   String
+  experience   String?
+  skills       String?
+  achievements String?
+  education    String?
+  interests    String?
+  
+  // Timestamps
+  createdAt    DateTime    @default(now()) @map("created_at")
+  updatedAt    DateTime    @updatedAt @map("updated_at")
+  
+  // Relations
+  userId       String      @map("user_id")
+  user         User        @relation(fields: [userId], references: [id])
+  
+  @@map("bios")
+}
+
+model Subscription {
+  id            String    @id @default(uuid())
+  plan          String    // "free", "pro", "business"
+  status        String    // "active", "canceled", "expired"
+  startDate     DateTime  @default(now()) @map("start_date")
+  endDate       DateTime? @map("end_date")
+  
+  // Billing info
+  stripeCustomerId String? @map("stripe_customer_id")
+  stripeSubscriptionId String? @map("stripe_subscription_id")
+  
+  // Relations
+  userId        String    @unique @map("user_id")
+  user          User      @relation(fields: [userId], references: [id])
+  
+  // Timestamps
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+  
+  @@map("subscriptions")
+}
