@@ -1,12 +1,11 @@
 import './styles/globals.css';
-import { Inter } from 'next/font/google';
+import { nunitoSans, audioWide } from './utils/fonts.js';
 import Header from './components/server/Header';
 import Footer from './components/server/Footer';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+
 
 export const metadata = {
-  // metadataBase: new URL('https://perfectbio.com'),
   title: 'Perfect Bio - AI-Powered Bio Generator',
   description: 'Create professional, engaging, and platform-optimized bios in seconds with our AI-powered bio generator.',
   keywords: 'bio generator, AI bio, professional bio, LinkedIn bio, Twitter bio, Instagram bio, personal branding',
@@ -18,10 +17,10 @@ export const metadata = {
     address: false,
     telephone: false,
   },
+  metadataBase: new URL('https://perfectbio.com'),
   openGraph: {
     title: 'Perfect Bio - AI-Powered Bio Generator',
     description: 'Create professional, engaging, and platform-optimized bios in seconds with our AI-powered bio generator.',
-    // url: 'https://perfectbio.com',
     siteName: 'Perfect Bio',
     images: [
       {
@@ -53,17 +52,20 @@ export const metadata = {
     },
   },
   icons: {
-    icons: {
-      icon: [
-        {
-          url: '/app/favicon.svg',
-          type: 'image/svg+xml',
-          sizes: '512x512',
-        },
-      ],
-      shortcut: { url: '/app/favicon.png' },
-    },
+    icon: [
+      {
+        url: '/app/favicon.svg',
+        type: 'image/svg+xml',
+        sizes: 'any',
+      },
+      {
+        url: '/app/favicon.png',
+        sizes: 'any',
+      }
+    ],
+
   },
+
   manifest: '/site.webmanifest',
   // verification: {
   //   google: 'google-site-verification-code',
@@ -74,7 +76,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.variable}>
+      <body className={`${nunitoSans.variable} ${audioWide.variable}`}>
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">{children}</main>
