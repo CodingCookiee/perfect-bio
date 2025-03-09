@@ -6,6 +6,7 @@ import Footer from './components/server/Footer';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata = {
+  // metadataBase: new URL('https://perfectbio.com'),
   title: 'Perfect Bio - AI-Powered Bio Generator',
   description: 'Create professional, engaging, and platform-optimized bios in seconds with our AI-powered bio generator.',
   keywords: 'bio generator, AI bio, professional bio, LinkedIn bio, Twitter bio, Instagram bio, personal branding',
@@ -20,11 +21,11 @@ export const metadata = {
   openGraph: {
     title: 'Perfect Bio - AI-Powered Bio Generator',
     description: 'Create professional, engaging, and platform-optimized bios in seconds with our AI-powered bio generator.',
-    url: 'https://perfectbio.com',
+    // url: 'https://perfectbio.com',
     siteName: 'Perfect Bio',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/app/app-icon.png',
         width: 1200,
         height: 630,
         alt: 'Perfect Bio - AI-Powered Bio Generator',
@@ -37,7 +38,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Perfect Bio - AI-Powered Bio Generator',
     description: 'Create professional, engaging, and platform-optimized bios in seconds with our AI-powered bio generator.',
-    images: ['/images/twitter-image.jpg'],
+    images: ['/app/app-icon.png'],
     creator: '@perfectbio',
   },
   robots: {
@@ -52,18 +53,22 @@ export const metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/app/favicon-light.svg', media: '(prefers-color-scheme: light)' },
-      { url: '/app/favicon-dark.svg', media: '(prefers-color-scheme: dark)' },
-    ],
-    apple: { url: '/apple-icon.png' },
+    icons: {
+      icon: [
+        {
+          url: '/app/favicon.svg',
+          type: 'image/svg+xml',
+          sizes: '512x512',
+        },
+      ],
+      shortcut: { url: '/app/favicon.png' },
+    },
   },
   manifest: '/site.webmanifest',
-  verification: {
-    google: 'google-site-verification-code',
-    yandex: 'yandex-verification-code',
-  },
+  // verification: {
+  //   google: 'google-site-verification-code',
+  //   yandex: 'yandex-verification-code',
+  // },
 };
 
 export default function RootLayout({ children }) {

@@ -1,0 +1,22 @@
+{
+    "name": "Perfect Bio",
+    "short_name": "PerfectBio",
+    "icons": [
+      {
+        "src": "/app/app-icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/app/app-icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#F6F4F0",
+    "description": "A simple, lightweight, and user-friendly social-media bio builder.",
+    "lang": "en-US",
+    "display": "standalone",
+    "start_url": "/"
+  }
