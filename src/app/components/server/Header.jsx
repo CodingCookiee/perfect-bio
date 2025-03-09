@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <div>
+    <div className='font-brand font-normal text-2xl '>
       Header
     </div>
   );

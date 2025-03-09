@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -5,26 +6,21 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/context/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: "rgb(239, 246, 255)",
-          100: "rgb(219, 234, 254)",
-          200: "rgb(191, 219, 254)",
-          300: "rgb(147, 197, 253)",
-          400: "rgb(96, 165, 250)",
-          500: "rgb(59, 130, 246)",
-          600: "rgb(37, 99, 235)",
-          700: "rgb(29, 78, 216)",
-          800: "rgb(30, 64, 175)",
-          900: "rgb(30, 58, 138)",
-          950: "rgb(23, 37, 84)",
-        },
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        accent: "var(--color-accent)",
+        success: "var(--color-success)",
+        warning: "var(--color-warning)",
+        error: "var(--color-error)",
+        text: "var(--color-text)",
+        background: "var(--color-background)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
+        sans: ["var(--font-nunito-sans)", "system-ui", "sans-serif"],
+        brand: ["var(--font-audio-wide)", "monospace"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",

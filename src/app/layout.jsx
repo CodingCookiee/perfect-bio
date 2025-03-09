@@ -1,4 +1,4 @@
-import './styles/globals.css';
+import './globals.css';
 import { nunitoSans, audioWide } from './utils/fonts.js';
 import Header from './components/server/Header';
 import Footer from './components/server/Footer';
