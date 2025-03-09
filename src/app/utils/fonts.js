@@ -8,7 +8,7 @@ export const nunitoSans = localFont({
     {
       path: '../../../public/fonts/nunito-sans/NunitoSans-ExtraLight.ttf',
       weight: '200',
-      style: 'normal'
+      style: 'normal'  
     },
     {
       path: '../../../public/fonts/nunito-sans/NunitoSans-Light.ttf',
@@ -22,17 +22,17 @@ export const nunitoSans = localFont({
     },
     {
       path: '../../../public/fonts/nunito-sans/NunitoSans-SemiBold.ttf',
-      weight: '500',
-      style: 'normal'
-    },
-    {
-      path: '../../../public/fonts/nunito-sans/NunitoSans-Bold.ttf',
       weight: '600',
       style: 'normal'
     },
     {
+      path: '../../../public/fonts/nunito-sans/NunitoSans-Bold.ttf',
+      weight: '700',  
+      style: 'normal'
+    },
+    {
       path: '../../../public/fonts/nunito-sans/NunitoSans-ExtraBold.ttf',
-      weight: '700',
+      weight: '800',
       style: 'normal'
     }
   ]

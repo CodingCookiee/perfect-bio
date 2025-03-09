@@ -15,6 +15,49 @@
   --error-rgb: 239, 68, 68;
 }
 
+/* Font Layer */
+@layer base {
+    /* Base font styles */
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Font utility classes */
+  .font-nunito {
+    font-family: var(--font-nunito-sans);
+  }
+  
+  .font-audiowide {
+    font-family: var(--font-audio-wide);
+  }
+  
+  .font-nunito.font-extralight {
+    font-weight: 200 !important;
+  }
+  
+  .font-nunito.font-light {
+    font-weight: 300 !important;
+  }
+  
+  .font-nunito.font-normal {
+    font-weight: 400 !important;
+  }
+  
+  .font-nunito.font-semibold {
+    font-weight: 600 !important;
+  }
+  
+  .font-nunito.font-bold {
+    font-weight: 700 !important;
+  }
+  
+  .font-nunito.font-extrabold {
+    font-weight: 800 !important;
+  }
+}
+
 
  /* Modified CSS Reset */
 /* Box-sizing */

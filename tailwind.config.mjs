@@ -21,6 +21,18 @@ export default {
       fontFamily: {
         sans: ["var(--font-nunito-sans)", "system-ui", "sans-serif"],
         brand: ["var(--font-audio-wide)", "monospace"],
+        //  direct class names
+        'audiowide': ["var(--font-audio-wide)", "monospace"],
+        'nunito': ["var(--font-nunito-sans)", "system-ui", "sans-serif"],
+      },
+      fontWeight: {
+        extralight: '200',
+        light: '300',
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
+        extrabold: '800',
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",
