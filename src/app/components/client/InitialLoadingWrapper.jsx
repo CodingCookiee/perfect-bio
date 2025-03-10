@@ -5,8 +5,16 @@ import PageLoading from '../../loading';
 
 export default function InitialLoadingWrapper({ children }) {
     const [isLoading, setIsLoading] = useState(true);
+    const stylingMode = true
+
 
     useEffect(() => {
+
+        if(stylingMode){
+           return
+        }
+
+
         // Show loading on the first load only
         const hasLoaded = localStorage.getItem('hasLoaded');
 
@@ -16,7 +24,7 @@ export default function InitialLoadingWrapper({ children }) {
            const timer = setTimeout(() => {
                  setIsLoading(false);
                  localStorage.setItem('hasLoaded', 'true');
-            }, 11000); // 11 seconds to see the full loading sequence
+            }, 1000); 
 
             return () => clearTimeout(timer);
         }
