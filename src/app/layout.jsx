@@ -2,6 +2,7 @@ import './globals.css';
 import { nunitoSans, audioWide } from './utils/fonts.js';
 import Header from './components/server/Header';
 import Footer from './components/server/Footer';
+import InitialLoadingWrapper from './components/client/InitialLoadingWrapper';
 
 
 
@@ -77,11 +78,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${nunitoSans.variable} ${audioWide.variable}`} suppressHydrationWarning>
       <body>
+        <InitialLoadingWrapper>
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
         </div>
+        </InitialLoadingWrapper>
       </body>
     </html>
   );

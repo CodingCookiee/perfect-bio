@@ -5,7 +5,7 @@ import * as Progress from '@radix-ui/react-progress';
 const PERCENTAGE = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 const LABELS = ['Just a moment', 'Gathering information', 'Working on it', 'Creating magic', 'Almost done'];
 
-export default function Loading() {
+export default function PageLoading() {
   const [index, setIndex] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -29,7 +29,7 @@ export default function Loading() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-full space-y-6 px-10">
-      <h2 className="text-xl font-semibold text-primary-700">
+      <h2 className="text-xl font-audioWide font-semibold text-primary-700">
         {LABELS[Math.min(Math.floor(index / 2), LABELS.length - 1)]}
       </h2>
       

@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import Hero from './components/server/Hero';
 import Features from './components/server/Features';
 import Pricing from './components/server/Pricing';
