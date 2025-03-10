@@ -28,16 +28,17 @@ export default function PageLoading() {
   }, [index]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full space-y-8   bg-background">
-      <h2 className="!text-5xl font-audiowide font-semibold mb-5">
+    <div className="flex flex-col items-center justify-center min-h-screen w-full space-y-8 bg-background">
+      <h2 className="!text-5xl font-audiowide font-semibold">
         {LABELS[Math.min(Math.floor(index / 2), LABELS.length - 1)]}
       </h2>
       
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-md space-y-0.5">
         <Progress.Root 
-          className="relative overflow-hidden bg-gray-300 rounded-xl w-full h-8"
+          className="relative overflow-hidden bg-gray-300 rounded-xl w-full h-8 "
           value={progress}
         >
+        {/* TODO: the bg color is not working  */}
           <Progress.Indicator 
             className=" w-full h-full bg-primary transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${100 - progress}%)` }}
