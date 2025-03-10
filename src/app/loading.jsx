@@ -28,8 +28,8 @@ export default function PageLoading() {
   }, [index]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full space-y-8  bg-background">
-      <h2 className="!text-5xl font-audiowide font-semibold mb-2.5">
+    <div className="flex flex-col items-center justify-center min-h-screen w-full space-y-8   bg-background">
+      <h2 className="!text-5xl font-audiowide font-semibold mb-5">
         {LABELS[Math.min(Math.floor(index / 2), LABELS.length - 1)]}
       </h2>
       

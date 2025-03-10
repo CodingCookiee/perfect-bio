@@ -1,4 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,17 +7,24 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/context/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  // Explicitly defining layer order to ensure utilities override base
+  layers: {
+    theme: {},
+    base: {},
+    components: {},
+    utilities: {},
+  },
   theme: {
     extend: {
       colors: {
-        primary: "var(--color-primary)",
-        secondary: "var(--color-secondary)",
-        accent: "var(--color-accent)",
-        success: "var(--color-success)",
-        warning: "var(--color-warning)",
-        error: "var(--color-error)",
-        text: "var(--color-text)",
-        background: "var(--color-background)",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        accent: "var(--accent)",
+        success: "var(--success)",
+        warning: "var(--warning)",
+        error: "var(--error)",
+        text: "var(--text)",
+        background: "var(--background)",
       },
       fontFamily: {
         sans: ["var(--font-nunito-sans)", "system-ui", "sans-serif"],
