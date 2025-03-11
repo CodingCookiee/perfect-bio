@@ -5,7 +5,7 @@
 @import "tailwindcss" layer(tw);
 /* Custom preflight instead of default */
 @import "./styles/custom-preflight.css" layer(tw.base);
-@plugin "tailwindcss-animate";
+
 
 :root {
   --primary: #e87731;
