@@ -37,8 +37,7 @@ export default function PageLoading({ skipToEnd = false }) {
       }
     };
 
-    timer = setInterval(updateProgress, 500); // Slightly faster to ensure we get through all steps
-
+    timer = setInterval(updateProgress, 500); 
     return () => clearInterval(timer);
   }, [index, skipToEnd]);
 
