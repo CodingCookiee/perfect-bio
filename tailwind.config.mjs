@@ -25,6 +25,7 @@ export default {
         error: "var(--error)",
         text: "var(--text)",
         background: "var(--background)",
+        border: "var(--border-color)",
       },
       fontFamily: {
         sans: ["var(--font-nunito-sans)", "system-ui", "sans-serif"],
