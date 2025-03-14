@@ -1,8 +1,4 @@
 /* Define layer order explicitly */
-
-@plugin "tailwindcss-animate";
-
-@custom-variant dark (&:is(.dark *));
 @layer tw, tw.theme, tw.base, tw.components, tw.utilities, custom;
 
 /* Import Tailwind as a whole first */
@@ -10,12 +6,16 @@
 /* Custom preflight instead of default */
 @import "./styles/custom-preflight.css" layer(tw.base);
 
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
 :root {
   --primary: #e87731;
   --secondary: #f49155;
   --text: #1f1f1f;
   --background: #F6F4F0;
-  --border-color: #474545;
+  --border: #b4b4b4;
   --accent: rgb(79, 70, 229);
   --success: rgb(34, 197, 94);
   --warning: rgb(234, 179, 8);
@@ -32,7 +32,6 @@
   --muted-foreground: oklch(0.556 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -87,7 +86,7 @@
 
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 3px;
+    width: 5px;
     height: 3px;
   }
 
