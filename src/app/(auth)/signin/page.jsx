@@ -2,12 +2,15 @@ import React from "react";
 import { Linkedin, MailOpen } from "lucide-react";
 import { FaGoogle } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import { BackgroundLines } from "@/components/ui/background-lines";
 import Link from "next/link";
 
 const Page = () => {
   return (
-    <div className="signin w-vw h-[90vh] flex flex-col items-center justify-center gap-2.5">
-      <h1 className="text-3xl font-audiowide font-semibold mb-8">Sign in</h1>
+   
+    <BackgroundLines
+     className="signin w-vw h-[90vh] flex flex-col items-center justify-center gap-2.5">
+      <h1 className=" text-3xl font-audiowide font-semibold mb-8">Sign in</h1>
       <div className="social-logins flex flex-col items-center justify-center gap-4 w-full max-w-2xs">
         <Button
           variant="outline"
@@ -46,7 +49,8 @@ const Page = () => {
           /> Login with Email
         </Button>
       </Link>
-    </div>
+    </BackgroundLines>
+    
   );
 };
 
