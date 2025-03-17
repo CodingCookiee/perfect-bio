@@ -6,7 +6,7 @@ export const ShimmerButton = forwardRef(
     {
       shimmerColor = "#1f1f1f",
       shimmerSize = "0.15rem",
-      shimmerDuration = "0.5s",
+      shimmerDuration = "2.5s",
       borderRadius = "100px",
       background = "#e87731",
       className,
@@ -51,7 +51,7 @@ export const ShimmerButton = forwardRef(
         {/* Highlight */}
         <div
           className={cn(
-            "absolute inset-0  size-full",
+            "absolute inset-0 size-full", // Fixed "insert-0" to "inset-0"
             "rounded-2xl px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#ffffff1f]",
             // transition
             "transform-gpu transition-all duration-300 ease-in-out",
