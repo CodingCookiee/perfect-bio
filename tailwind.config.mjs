@@ -1,5 +1,4 @@
 /* eslint-disable import/no-anonymous-default-export */
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -7,8 +6,8 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/context/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  // Explicitly defining layer order to ensure utilities override base
-  layers: {
+   // Explicitly defining layer order to ensure utilities override base
+   layers: {
     theme: {},
     base: {},
     components: {},
@@ -46,6 +45,8 @@ export default {
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",
         "slide-up": "slideUp 0.5s ease-in-out",
+        "shimmer-slide": "shimmerSlide var(--speed) ease-in-out infinite alternate",
+        "spin-around": "spinAround calc(var(--speed) * 2) infinite linear",
       },
       keyframes: {
         fadeIn: {
@@ -56,6 +57,25 @@ export default {
           "0%": { transform: "translateY(20px)", opacity: 0 },
           "100%": { transform: "translateY(0)", opacity: 1 },
         },
+        spinAround: {
+          "0%": {
+            transform: "translateZ(0) rotate(0)",
+          },
+          "15%, 35%": {
+            transform: "translateZ(0) rotate(90deg)",
+          },
+          "65%, 85%": {
+            transform: "translateZ(0) rotate(270deg)",
+          },
+          "100%": {
+            transform: "translateZ(0) rotate(360deg)",
+          },
+        },
+        shimmerSlide: {
+          to: {
+            transform: "translate(calc(100cqw - 100%), 0)",
+          },
+        }
       },
     },
   },
