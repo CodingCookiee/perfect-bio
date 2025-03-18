@@ -1,12 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Linkedin, MailOpen } from "lucide-react";
 import { FaGoogle } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
+import { LoadingButton } from "@/components/ui/loading-button";
 import { ShimmerButton } from "@/components/ui/animated-button";
 import { BackgroundLines } from "@/components/ui/background-lines";
 import Link from "next/link";
 
 const Page = () => {
+  const [isLoading, setIsLoading] = useState(false);
   return (
    
     <BackgroundLines
@@ -36,16 +38,18 @@ const Page = () => {
       </div>
       <Link href="/signin/manual-signin"
         className='flex flex-col items-center justify-center gap-4 w-full max-w-2xs'>
-        <Button
+        <LoadingButton
           variant="outline"
           className="w-full py-7 cursor-pointer bg-transparent rounded-full
           text-text hover:bg-primary/20 hover:text-primary transition-all duration-300 ease-in-out
           flex items-center justify-center gap-2"
+          onClick={() => setIsLoading(true)}
+          loadingText="Please wait..."
         >
           <MailOpen 
             className="size-5"
           /> Login with Email
-        </Button>
+        </LoadingButton>
       </Link>
     </BackgroundLines>
     
